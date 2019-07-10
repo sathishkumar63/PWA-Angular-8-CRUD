@@ -1,0 +1,81 @@
+<div class="container my-5 p-0">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card border-0">
+        <div class="card-header border-0">
+          <h5 class="card-title">All Users</h5>
+        </div>
+        <div class="card-body p-0">
+          <form>
+            <mat-form-field class="pl-0 pl-sm-4 mb-3 mb-sm-0 search-field">
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+              <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+            <button mat-raised-button class="float-right mr-0 mr-sm-5 mb-3 mb-sm-0" color="primary"
+              matTooltip="Click to Add" (click)="openEditDialog()">
+              <mat-icon matListIcon>add</mat-icon> Add User
+            </button>
+          </form>
+          <div class="table-responsive mat-elevation-z1">
+            <div class="d-flex justify-content-center my-5" *ngIf="loading">
+              <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+            <table mat-table *ngIf="!loading" #table matSort matSortActive="Id" matSortDirection="asc" matSortDisableClear [dataSource]="dataSource" cdkDrag cdkDropList
+              (cdkDropListDropped)="dropTable($event); table.renderRows()">
+              <ng-container matColumnDef="Id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+                <td mat-cell *matCellDef="let element">
+                  <span class="mobile-label pr-2">Id : </span>
+                  {{element.id}} </td>
+              </ng-container>
+              <ng-container matColumnDef="First Name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+                <td mat-cell *matCellDef="let element">
+                  <span class="mobile-label pr-2">First Name : </span> {{element.first_name}} </td>
+              </ng-container>
+              <ng-container matColumnDef="Last Name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+                <td mat-cell *matCellDef="let element">
+                  <span class="mobile-label pr-2">Last Name : </span> {{element.last_name}} </td>
+              </ng-container>
+              <ng-container matColumnDef="Email">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                <td mat-cell *matCellDef="let element">
+                  <span class="mobile-label pr-2">Email : </span> {{element.email}} </td>
+              </ng-container>
+              <ng-container matColumnDef="Date of Birth">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Date of Birth </th>
+                <td mat-cell *matCellDef="let element">
+                  <span class="mobile-label pr-2">Date of Birth : </span> {{element.DOB}} </td>
+              </ng-container>
+              <ng-container matColumnDef="Action">
+                <th mat-header-cell *matHeaderCellDef>Actions </th>
+                <td mat-cell *matCellDef="let element">
+                  <button mat-icon-button matTooltip="Click to Edit" class="iconbutton" color="primary"
+                    (click)="openEditDialog(element)">
+                    <mat-icon aria-label="Edit">edit</mat-icon>
+                  </button>
+                  <button mat-icon-button matTooltip="Click to Delete" (click)="openDeleteDialog(element)"
+                    class="iconbutton" color="warn">
+                    <mat-icon aria-label="Delete">delete</mat-icon>
+                  </button>
+                </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;" cdkDrag cdkDragHandle
+                cdkDragRootElement="mat-row" [cdkDragData]="row" cdkDragLockAxis="y"
+                (cdkDragStarted)="dragStarted($event)" (cdkDragEnded)="dragEnded($event)"
+                (cdkDropListDropped)="dropTable($event)" [cdkDragDisabled]="(isHandset$ | async) === true"></tr>
+            </table>
+            <div class="p-3 d-flex justify-content-center" *ngIf="!loading && allUsers?.length === 0">
+              No Result
+            </div>
+            <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

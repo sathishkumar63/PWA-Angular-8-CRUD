@@ -1,0 +1,83 @@
+<div class="container p-0">
+  <h5 class="mb-3">
+    <span *ngIf="this.userdata.editUser.id === ''">Add</span>
+    <span *ngIf="this.userdata.editUser.id !== ''">Edit</span>
+    User
+  </h5>
+  <form [formGroup]="userForm">
+    <div class="card border-0 rounded-0 bg-white">
+      <div class="card-body p-0">
+        <div class="row mx-0">
+          <div class="col-md-12 p-0">
+            <div class="row mx-0 justify-content-between">
+              <div class="col-md-6 mb-3">
+                <mat-form-field class="w-100">
+                  <input matInput placeholder="First Name" formControlName="first_name" autocomplete="off">
+                  <mat-error *ngIf="userForm.get('first_name').dirty || userForm.get('first_name').touched">
+                    <span *ngIf="userForm.get('first_name').hasError('required')">
+                      First name is required!
+                    </span>
+                    <span *ngIf="userForm.get('first_name').hasError('maxlength')">
+                      First name is not more than 20 characters!
+                    </span>
+                    <span *ngIf="userForm.get('first_name').hasError('pattern')">
+                      Enter a valid First name!
+                    </span>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6 mb-3">
+                <mat-form-field class="w-100">
+                  <input matInput placeholder="Last Name" formControlName="last_name" autocomplete="off">
+                  <mat-error *ngIf="userForm.get('last_name').dirty || userForm.get('last_name').touched">
+                    <span *ngIf="userForm.get('last_name').hasError('required')">
+                      Last name is required!
+                    </span>
+                    <span *ngIf="userForm.get('last_name').hasError('maxlength')">
+                      Last name is not more than 20 characters!
+                    </span>
+                    <span *ngIf="userForm.get('last_name').hasError('pattern')">
+                      Enter a valid Last name!
+                    </span>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6 mb-3">
+                <mat-form-field class="w-100">
+                  <input matInput placeholder="Email" formControlName="email" autocomplete="off">
+                  <mat-error *ngIf="userForm.get('email').dirty || userForm.get('email').touched">
+                    <span *ngIf="userForm.get('email').hasError('required')">
+                      Email is required!
+                    </span>
+                    <span *ngIf="userForm.get('email').hasError('pattern')">
+                      Enter a valid email address!
+                    </span>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6 mb-3">
+                <mat-form-field class="w-100" color="accent">
+                  <!-- <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" formControlName="DOB" -->
+                  <input matInput [matDatepicker]="picker" formControlName="DOB" placeholder="Date of Birth"
+                    (dateChange)="date($event)">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker touchUi #picker></mat-datepicker>
+                  <mat-error *ngIf="userForm.get('DOB').dirty || userForm.get('DOB').touched">
+                    <span *ngIf="userForm.get('DOB').hasError('required')">
+                      Date of Birth is required!
+                    </span>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer border-0 bg-white d-flex justify-content-between">
+        <button mat-button mat-raised-button (click)="onNoClick()">Cancel</button>
+        <button mat-button mat-raised-button color="primary" [disabled]="!userForm.valid"
+          [mat-dialog-close]="userForm.value">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
