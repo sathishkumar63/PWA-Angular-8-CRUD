@@ -1,0 +1,104 @@
+{
+  "configVersion": 1,
+  "timestamp": 1562755716943,
+  "appData": {
+    "name": "Join Eight",
+    "description": "Join Eight CRUD",
+    "version": "1.1.0",
+    "changelog": "Added better resource caching for Join Eight"
+  },
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/3-es5.07cd965979f597d30b63.js",
+        "/4-es2015.af9da25291858f4f9edf.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main-es2015.67bb95b059fbb1f07c27.js",
+        "/main-es5.d1e6e5672c40a3618e2b.js",
+        "/polyfills-es2015.27661dfa98f6332c27dc.js",
+        "/polyfills-es5.4e06eb653a3c8a2d581f.js",
+        "/runtime-es2015.ba9158936c71c1b2077c.js",
+        "/runtime-es5.a54a5d8509b7eb89ee15.js",
+        "/styles.9e108923977fa6b302cc.css"
+      ],
+      "patterns": [
+        "https:\\/\\/fonts\\.googleapis\\.com\\/.*"
+      ]
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/jointeight-logo.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "Join Eight api cache",
+      "patterns": [
+        "https:\\/\\/5d2235dc2ba8cf0014c44de6\\.mockapi\\.io\\/api\\/v1\\/.*"
+      ],
+      "strategy": "freshness",
+      "maxSize": 20,
+      "maxAge": 3600000,
+      "timeoutMs": 5000,
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/3-es5.07cd965979f597d30b63.js": "113b80c4d07ad74091f260c0569aab000b2acbb9",
+    "/4-es2015.af9da25291858f4f9edf.js": "25de4bb72829f3de19098e4fb4271ef42f7e5366",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/jointeight-logo.png": "3913a4d1ca1537e7f3af5f9538d4535d531701b7",
+    "/favicon.ico": "2d6ef74a2277ccb6b9988d2f8439c3de0186ccd1",
+    "/index.html": "0218e5e2b4c4d34d69be98a94da31f3af829823e",
+    "/main-es2015.67bb95b059fbb1f07c27.js": "463cf94638149173ab32acc90a863b61602e0319",
+    "/main-es5.d1e6e5672c40a3618e2b.js": "62ec2a5ca064800a72c81281227b922c20cd4cfc",
+    "/polyfills-es2015.27661dfa98f6332c27dc.js": "77f974dd2b186031cfc4f4526d96db4efcd39353",
+    "/polyfills-es5.4e06eb653a3c8a2d581f.js": "f84a71ef6c7a788b5fe701bf2405313d7766a66d",
+    "/runtime-es2015.ba9158936c71c1b2077c.js": "be277da4179e0e306c7acfdec17d8f8aea088538",
+    "/runtime-es5.a54a5d8509b7eb89ee15.js": "b8d599baf76bd9c1f92149b09567f484b5d1db44",
+    "/styles.9e108923977fa6b302cc.css": "7ba28cc2ef4fa0215bcc6c7417e6262d5d49c92c"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
