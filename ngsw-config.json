@@ -1,0 +1,55 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "appData": {
+    "name": "Join Eight",
+    "description": "Join Eight CRUD",
+    "version": "1.1.0",
+    "changelog": "Added better resource caching for Join Eight"
+  },
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/index.html",
+          "/favicon.ico",
+          "/*.css",
+          "/*.js",
+          "/vendor.*.js",
+          "/main.*.js",
+          "/polyfills.*.js",
+          "/runtime.*.js"
+        ],
+        "urls": [
+          "https://fonts.googleapis.com/**"
+        ]
+      }
+    }, {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "Join Eight api cache",
+      "urls": [
+        "https://5d2235dc2ba8cf0014c44de6.mockapi.io/api/v1/**"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 20,
+        "maxAge": "1h",
+        "timeout": "5s"
+      }
+    }
+  ]
+}
