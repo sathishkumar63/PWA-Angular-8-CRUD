@@ -1,0 +1,64 @@
+<div class="container my-5 p-0">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white border-0 d-flex justify-content-between">
+          <p class="font-weight-bold text-primary">ALL USERS</p>
+          <button mat-raised-button class="" color="primary" matTooltip="Click to Add" (click)="openEditDialog()">
+            <mat-icon matListIcon>add</mat-icon> Add User
+          </button>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <div class="d-flex justify-content-center my-5" *ngIf="loading">
+              <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+            <table *ngIf="!loading" datatable [dtOptions]="dtOptions" class="table table-hover" cdkDropList cdkDragLockAxis="y"
+            (cdkDropListDropped)="dropTable($event);">
+              <thead>
+                <tr>
+                  <!-- <th scope="col">#</th> -->
+                  <th scope="col">ID</th>
+                  <th scope="col">First name</th>
+                  <th scope="col">Last name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Date of Birth</th>
+                  <th scope="col">Controls</th>
+                </tr>
+              </thead>
+              <tbody *ngIf="persons?.length != 0">
+                <tr *ngFor="let person of persons; let i = index;" cdkDrag>
+                  <!-- <td scope="row">{{i+1}}</td> -->
+                  <td>{{ person.id }}</td>
+                  <td>{{ person.first_name }}</td>
+                  <td>{{ person.last_name }}</td>
+                  <td>{{ person.email }}</td>
+                  <td>{{person.DOB | date:'dd/MMM/yyyy'}}</td>
+                  <td>
+                    <div class="btn-group btn-group-sm" role="group" aria-label="action controls">
+                      <button mat-icon-button matTooltip="Click to Edit" class="iconbutton" color="primary"
+                        (click)="openEditDialog(person)">
+                        <mat-icon aria-label="Edit">edit</mat-icon>
+                      </button>
+                      <button mat-icon-button matTooltip="Click to Delete" (click)="openDeleteDialog(person)"
+                        class="iconbutton" color="warn">
+                        <mat-icon aria-label="Delete">delete</mat-icon>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+              <tbody *ngIf="persons?.length == 0">
+                  <tr>
+                    <td colspan="7" class="text-center">No User Data!</td>
+                  </tr>
+                <tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
