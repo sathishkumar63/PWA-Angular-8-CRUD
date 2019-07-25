@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1562755716943,
+  "timestamp": 1564045971890,
   "appData": {
     "name": "Join Eight",
     "description": "Join Eight CRUD",
@@ -14,17 +14,18 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "/3-es5.07cd965979f597d30b63.js",
-        "/4-es2015.af9da25291858f4f9edf.js",
+        "/3-es5.edf536b9916cf9522ad7.js",
+        "/4-es2015.6379d4f81fb3b420963b.js",
         "/favicon.ico",
         "/index.html",
-        "/main-es2015.67bb95b059fbb1f07c27.js",
-        "/main-es5.d1e6e5672c40a3618e2b.js",
+        "/main-es2015.f4e8cbdbfb36cde90ef8.js",
+        "/main-es5.446b1af68c68c09adf40.js",
         "/polyfills-es2015.27661dfa98f6332c27dc.js",
         "/polyfills-es5.4e06eb653a3c8a2d581f.js",
-        "/runtime-es2015.ba9158936c71c1b2077c.js",
-        "/runtime-es5.a54a5d8509b7eb89ee15.js",
-        "/styles.9e108923977fa6b302cc.css"
+        "/runtime-es2015.fdc8eece206705c24957.js",
+        "/runtime-es5.bf6dc1dcbbe8c8df8eec.js",
+        "/scripts.007c6a4d022c9765865a.js",
+        "/styles.0ee0a66cfcdc5a97661a.css"
       ],
       "patterns": [
         "https:\\/\\/fonts\\.googleapis\\.com\\/.*"
@@ -62,8 +63,8 @@
     }
   ],
   "hashTable": {
-    "/3-es5.07cd965979f597d30b63.js": "113b80c4d07ad74091f260c0569aab000b2acbb9",
-    "/4-es2015.af9da25291858f4f9edf.js": "25de4bb72829f3de19098e4fb4271ef42f7e5366",
+    "/3-es5.edf536b9916cf9522ad7.js": "6bdc987d26facf4586d8590e0851684a32afa236",
+    "/4-es2015.6379d4f81fb3b420963b.js": "591d2eddab71c5bd0ad489a0fbaa720dd36daa1f",
     "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
     "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
@@ -74,14 +75,15 @@
     "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/assets/jointeight-logo.png": "3913a4d1ca1537e7f3af5f9538d4535d531701b7",
     "/favicon.ico": "2d6ef74a2277ccb6b9988d2f8439c3de0186ccd1",
-    "/index.html": "0218e5e2b4c4d34d69be98a94da31f3af829823e",
-    "/main-es2015.67bb95b059fbb1f07c27.js": "463cf94638149173ab32acc90a863b61602e0319",
-    "/main-es5.d1e6e5672c40a3618e2b.js": "62ec2a5ca064800a72c81281227b922c20cd4cfc",
+    "/index.html": "562f145c2f08cca8cbebf60cf1d0a8ad218448da",
+    "/main-es2015.f4e8cbdbfb36cde90ef8.js": "03377aaed2035b75b6e7de5974eca1baf61c1ff4",
+    "/main-es5.446b1af68c68c09adf40.js": "18fa122099d34b9f8678a89a0dad03030326068d",
     "/polyfills-es2015.27661dfa98f6332c27dc.js": "77f974dd2b186031cfc4f4526d96db4efcd39353",
     "/polyfills-es5.4e06eb653a3c8a2d581f.js": "f84a71ef6c7a788b5fe701bf2405313d7766a66d",
-    "/runtime-es2015.ba9158936c71c1b2077c.js": "be277da4179e0e306c7acfdec17d8f8aea088538",
-    "/runtime-es5.a54a5d8509b7eb89ee15.js": "b8d599baf76bd9c1f92149b09567f484b5d1db44",
-    "/styles.9e108923977fa6b302cc.css": "7ba28cc2ef4fa0215bcc6c7417e6262d5d49c92c"
+    "/runtime-es2015.fdc8eece206705c24957.js": "5692d536c867e1a351638a0bddff78082c8bed43",
+    "/runtime-es5.bf6dc1dcbbe8c8df8eec.js": "c72840e1741245cc7ab89ed38a7764516b58f86e",
+    "/scripts.007c6a4d022c9765865a.js": "9b58161886dcafabf398321fce8436127a1f87ee",
+    "/styles.0ee0a66cfcdc5a97661a.css": "47f92adde868d41422cb608ac60a3cefb669b8ec"
   },
   "navigationUrls": [
     {
